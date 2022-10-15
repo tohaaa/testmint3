@@ -110,7 +110,7 @@
     document.querySelectorAll('.connect').forEach(item => {
   item.addEventListener('click', event => {
      let account;
-        let button = event.target;
+        let button = document.getElementById('connectheader');
         ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
           account = accounts[0];
           console.log(account);
@@ -196,7 +196,7 @@
                     </svg>
                     <p>0x5c596126612ceFdAeC2B9cb7CeAcfBB509268249 S2</p>
                 </div>
-                <button id="connect" type="button">CONNECT</button>
+                <button id="connectheader" class="connect" type="button">CONNECT</button>
                 <span class="separador">|</span>
                 <div class="social">
                     <a href="https://discord.com/invite/Ru2EZj8P5x" target="_blank">
