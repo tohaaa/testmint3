@@ -3,7 +3,7 @@ body {
     background-image: url('img/mask.svg');
 }
 .hidden{
-    display: none;
+    display: none!important;
 }
 .row {
     display: flex;
