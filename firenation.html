@@ -28,7 +28,7 @@
     
     <script>
  var settings = {
-            "url": "https://mutantneighbors-api.azurewebsites.net/api/NationMintavailability/NationAvailability/EARTH NATION",
+            "url": "https://mutantneighbors-api.azurewebsites.net/api/NationMintavailability/NationAvailability/FIRE NATION",
             "method": "GET",
             "timeout": 0,
              "data": "str",
@@ -41,8 +41,8 @@
       
        
          
-            var earth_name =   response.Nation;
-            var earth_qt =   response.MintRemaining;//10
+            var name =   response.Nation;
+            var nation_qt =   response.MintRemaining;//10
             
          
 
@@ -61,7 +61,7 @@
 
              data += ' <div class="columns small-12 large-6 connectcontent">';
                 data += '  <div class="inner">';
-                    data += '  <p class="title">'+earth_name+ ' | '+earth_qt+'/111</p>';
+                    data += '  <p class="title">'+name+ ' | '+nation_qt+'/111</p>';
                      data += ' <div class="countblock">';
                         data += '  <div class="counter">';
                             data += '  <i class="counter-button decrement-btn changeQuantity" data-change="-1">-</i>';
