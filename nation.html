@@ -107,7 +107,7 @@
             
             
             
-     document.getElementsByClassName('connect').addEventListener('click', event => {
+     document.getElementById('connect').addEventListener('click', event => {
    let account;
    let button = event.target;
    ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
