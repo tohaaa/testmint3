@@ -299,6 +299,33 @@
 
     <script>
         $(document).ready(function() {
+                        
+        let account;
+        
+        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+            
+            
+            account = accounts[0];
+              $('.connectcontent').addClass('connected');
+             $('.connectbody').text('MINT YOUR MUTANT');
+              
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
+         
+
+          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
+            console.log(result);
+            let wei = parseInt(result,16);
+            let balance = wei / (10**18);
+            console.log(balance + " ETH");
+          });
+        });
+      
+            
+            
+            
             if ($(window).width() < 480) {
                 $('#nationlist').slick({
                     infinite: false,
