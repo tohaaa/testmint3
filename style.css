@@ -1,0 +1,725 @@
+body {
+    background-color: #a9a9f5;
+    background-image: url('img/mask.svg');
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: unset !important;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+}
+
+#header.classinitial {
+    background-color: transparent;
+}
+
+#header.classfinal {
+    background-color: #a9a9f5;
+    box-shadow: 1px 1px 10px -5px #2e2e2e;
+}
+
+#header .supheader {
+    height: 40px;
+    max-width: unset;
+    width: 100%;
+    background: #353557 0% 0% no-repeat padding-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s linear;
+}
+
+#header .supheader .close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    transition: all .2s linear;
+    top: 11px;
+}
+
+#header .supheader .close svg {
+    fill: #fff;
+}
+
+
+#header .supheader .alert {
+    text-align: center;
+    font: normal normal 600 16px/18px Poppins;
+    letter-spacing: 0.8px;
+    color: #61C554;
+    text-transform: uppercase;
+    opacity: 1;
+    margin: 0 15px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#header .supheader .alert svg {
+    margin-right: 7px;
+
+}
+
+#header .supheader .content {
+    text-align: center;
+    font: normal normal normal 16px/18px Poppins;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#header .supheader .content span {
+    text-align: center;
+    font: normal normal 600 16px/18px Poppins;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+#header .infheader {
+    padding: 15px 75px;
+    justify-content: space-between;
+    max-width: unset;
+    width: 100%;
+}
+
+#header .infheader .social a {
+    margin-right: 20px;
+}
+
+#header .infheader .contentblock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#header .infheader .contentblock .separador {
+    margin: 0 25px;
+    text-align: center;
+    font: normal normal 100 25px/18px Poppins;
+    letter-spacing: 0.8px;
+    color: #FFFFFF;
+}
+
+#header .infheader .contentblock button {
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 10px 30px;
+    text-align: center;
+    font: normal normal 600 16px/30px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all .2s linear;
+}
+
+#header .infheader .contentblock button:hover {
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 10px 30px;
+    text-align: center;
+    font: normal normal 600 16px/30px Poppins;
+    background-color: #fff;
+    color: #a9a9f5;
+    transition: all .2s linear;
+}
+
+#header .infheader .contentblock .wallet {
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+    padding: 10px 10px;
+    text-align: center;
+
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 160px;
+    height: 52px;
+    margin-right: 20px;
+}
+
+#header .infheader .contentblock .wallet svg {
+    height: 33px;
+    width: 200px;
+    margin-right: 5px;
+    fill: #fff;
+}
+
+#header .infheader .contentblock .wallet p {
+    font: normal normal 600 20px/30px Poppins;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#footer {
+    padding: 0 75px;
+    height: 100px;
+    width: 100%;
+    background: #1B1B33 0% 0% no-repeat padding-box;
+    justify-content: space-between;
+
+}
+
+#footer .content p {
+    text-align: left;
+    font: normal normal normal 15px/35px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin: 0;
+}
+
+#footer .social {
+    text-align: right;
+}
+
+#footer .social a {
+    margin-right: 20px;
+}
+
+#main {
+    padding: 150px 75px 0 75px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#main .titleblock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+#main .titleblock hr {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+
+#main .titleblock p {
+    width: auto;
+    min-width: fit-content;
+    text-align: center;
+    font: normal normal bold 25px/18px Poppins;
+    letter-spacing: 1.25px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin: 0 20px;
+
+}
+
+#main .selectnation {
+    width: 100%;
+}
+
+#main .selectnation .ntion {
+    padding: 0 15px;
+    width: 25%;
+
+}
+#main .selectnation .nation.blocked {
+    pointer-events: none;
+filter: opacity(60%);
+}
+#main .selectnation .nation .inner {
+    background: #c6c6f8 0% 0% no-repeat padding-box;
+    border-radius: 40px;
+    width: 100%;
+    padding: 20px 20px 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    transition: all .2s linear;
+}
+
+
+
+
+#main .selectnation .nation .inner:hover {
+    border: 1px solid #FFFFFF;
+    transition: all .2s linear;
+
+
+}
+
+#main .selectnation .nation .inner .title {
+    text-align: left;
+    font: normal normal bold 20px/35px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin: 20px 0;
+}
+
+
+
+#main .selectblock {
+    width: 100%;
+}
+
+#main .selectblock .selectlogo {
+    text-align: right;
+    padding: 0;
+}
+
+#main .selectblock .selectlogo img {
+    margin-right: 70px;
+    height: 255px;
+    width: 255px;
+    border: 15px solid #fff;
+    border-radius: 55px;
+}
+
+#main .selectblock .separator {
+    text-align: right;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    max-width: 62px;
+}
+
+#main .selectblock .separator .line {
+    background-color: #000000;
+    height: 100%;
+    width: 1px;
+    position: relative;
+    left: 30px;
+    max-height: 270px;
+}
+
+#main .selectblock .separator img {
+
+    position: relative;
+}
+
+#main .selectblock .connectcontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 70px;
+    padding: 0;
+
+}
+
+#main .selectblock .connectcontent .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 450px;
+}
+
+#main .selectblock .connectcontent .title {
+
+    text-align: center;
+    font: normal normal 600 22px/18px Poppins;
+    letter-spacing: 1.1px;
+    color: #FFFFFF;
+    margin: 0 0 20px 0;
+
+}
+
+#main .selectblock .connectcontent .text.one {
+    text-align: center;
+    font: normal normal 400 16px/25px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.98;
+    margin: 20px 0 0 0;
+    display: block;
+}
+
+#main .selectblock .connectcontent .text.two {
+    text-align: center;
+    font: normal normal 400 16px/25px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.98;
+    margin: 20px 0 0 0;
+    display: none;
+}
+
+#main .selectblock .connectcontent.connected .text.one {
+
+    display: none;
+}
+
+#main .selectblock .connectcontent.connected .text.two {
+
+    display: block;
+}
+
+#main .selectblock .connectcontent .countblock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    width: 100%;
+    max-width: 405px;
+    height: 56px;
+    border-radius: 15px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+    display: none;
+
+}
+
+#main .selectblock .connectcontent.connected .countblock {
+    transition: all .3s linear;
+    display: flex;
+
+}
+
+#main .selectblock .connectcontent .countblock span {
+    font: normal normal bold 20px/35px Poppins;
+    letter-spacing: 0px;
+    color: #353557;
+}
+
+#main .selectblock .connectcontent .countblock .counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .selectblock .connectcontent .countblock .counter .qty-input {
+
+    background: transparent;
+    margin: 0 20px;
+    font: normal normal bold 20px/35px Poppins;
+    letter-spacing: 0px;
+    color: #353557;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    width: 40px;
+    max-width: 40px;
+    text-align: center;
+    cursor: default;
+}
+
+#main .selectblock .connectcontent .countblock .counter i {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    opacity: 1;
+    height: 32px;
+    width: 32px;
+    min-width: 32px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #353557;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font: normal normal 400 30px/35px Poppins;
+    transition: all .2s linear;
+}
+
+#main .selectblock .connectcontent .countblock .counter i:hover {
+    border: 1px solid #353557;
+    transition: all .2s linear;
+
+}
+
+#main .selectblock .connectcontent .connect {
+    width: 405px;
+    height: 56px;
+    /* UI Properties */
+    background: #353557 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    text-align: center;
+    font: normal normal 600 22px/33px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 2px solid #353557;
+    transition: all .2s linear;
+}
+
+#main .selectblock .connectcontent .connect:hover {
+
+    background: transparent;
+    transition: all .2s linear;
+
+    border: 2px solid #353557;
+    letter-spacing: 0px;
+    color: #353557;
+    cursor: pointer;
+}
+
+#main .selectblock .connectcontent .totalblock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    max-width: 405px;
+    height: 56px;
+    padding: 0;
+    margin-bottom: 20px;
+    display: none;
+
+}
+
+#main .selectblock .connectcontent.connected .totalblock {
+    transition: all .3s linear;
+    display: flex;
+}
+
+#main .selectblock .connectcontent .totalblock .total {
+    font: normal normal normal 22px/35px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+#main .selectblock .connectcontent .totalblock .totaleth {
+    font: normal normal bold 22px/35px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+#main .selectblock .connectcontent .founds {
+    display: none;
+}
+
+#main .selectblock .connectcontent.connected .founds {
+    background: #EF3943 0% 0% no-repeat padding-box;
+    border-radius: 15px;
+    padding: 10px 15px;
+    width: 100%;
+    max-width: 405px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#main .selectblock .connectcontent .founds p {
+    text-align: center;
+    font: normal normal normal 15px/23px Poppins;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+}
+
+#main .selectblock .connectcontent .founds svg {
+    height: 23px;
+    width: 12px;
+    fill: #fff;
+    cursor: pointer;
+ position: relative;
+right: 0;
+left: 30px;
+
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+    #header .supheader {
+        display: none;
+    }
+
+    #header .infheader .contentblock {
+        display: none;
+    }
+
+    #header .infheader .logoblock {
+        text-align: center;
+    }
+
+    #main {
+        padding: 100px 20px 20px 20px;
+        height: 100%;
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: -55px;
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+
+    }
+
+    .slick-dots li.slick-active button::before {
+        opacity: .75;
+        color: #1B1B33;
+        font-size: 15px;
+    }
+
+    .slick-dots li button::before {
+        font-family: 'slick';
+        font-size: 11px;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        content: '•';
+        text-align: center;
+        opacity: .25;
+        color: black;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    #main .selectnation {
+        margin-bottom: 65px;
+        margin-right: -20px;
+    }
+
+    #main .selectblock {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    #main .selectblock .selectlogo {
+        text-align: center;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    #main .selectblock .selectlogo img {
+        margin-right: 0;
+        height: auto;
+        width: auto;
+        border: 15px solid #fff;
+        border-radius: 55px;
+    }
+
+    #main .selectblock .separator {
+        text-align: center;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        max-height: 62px;
+        margin-bottom: 30px;
+        width: 100%;
+        max-width: 370px;
+    }
+
+    #main .selectblock .separator .line {
+        background-color: #000000;
+        height: 1px;
+        width: 100%;
+        position: relative;
+        left: unset;
+        min-width: 270px;
+        top: 30px;
+    }
+
+    #main .selectblock .connectcontent {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin: auto;
+    }
+
+    #footer {
+        padding: 40px 20px 20px 20px;
+        height: auto;
+        width: 100%;
+        background: #1B1B33 0% 0% no-repeat padding-box;
+        justify-content: center;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #main .selectblock .connectcontent .founds svg {
+
+        margin-left: 350px;
+    }
+
+    #main .selectblock .connectcontent .countblock {
+
+        max-width: unset;
+
+    }
+
+    #main .selectblock .connectcontent .totalblock {
+
+        max-width: unset;
+
+    }
+
+    #main .selectblock .connectcontent .connect {
+        width: 100%;
+
+    }
+
+    #main .selectblock .connectcontent.connected .founds {
+
+        max-width: unset;
+
+    }
+
+    #main .selectblock .connectcontent .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: unset;
+        width: 100%;
+    }
+
+    #footer .content {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #footer .social {
+        text-align: center;
+        padding-bottom: 35px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid #eee;
+    }
+}
