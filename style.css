@@ -2,7 +2,9 @@ body {
     background-color: #a9a9f5;
     background-image: url('img/mask.svg');
 }
-
+.hidden{
+    display: none;
+}
 .row {
     display: flex;
     flex-direction: row;
