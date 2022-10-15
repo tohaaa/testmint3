@@ -77,7 +77,7 @@
                        data += '   <span class="totaleth">0.000 ETH</span>';
                      data += ' </div>';
 
-                    data += '  <button  class="connect" type="button">CONNECT YOUR WALLET</button>';
+                    data += '  <button  class="connect connectbody" type="button">CONNECT YOUR WALLET</button>';
 
                     data += '  <div class="founds">';
                        data += '   <p>You don’t have enougth ethers to mint.</p>';
@@ -114,10 +114,18 @@
         let account;
         
         ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
-          account = accounts[0];
-           $("#connectheader").addClass("hidden");  
-           $(".wallet").removeClass("hidden");  
-          $(".wallet p").html(account); 
+            
+            
+            account = accounts[0];
+              $('.connectcontent').addClass('connected');
+             if ($('.connectcontent').hasClass('connected')) {
+                 $('.connectbody').text('MINT YOUR MUTANT');
+             } else {
+             }
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
          
 
           ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
@@ -134,14 +142,14 @@
       });  
     });     
   
-    $('.connect').click(function () {
+    /*$('.connect').click(function () {
      var $this = $(this);
         $('.connectcontent').addClass('connected');
          if ($('.connectcontent').hasClass('connected')) {
              $this.text('MINT YOUR MUTANT');
          } else {
          }
-    });
+    });*/
     $('.founds svg').click(function () {
         $('.founds').css('display', 'none');
     });
