@@ -305,6 +305,7 @@
 
     <script>
         $(document).ready(function() {
+            import detectEthereumProvider from '@metamask/detect-provider';
  // detect provider using @metamask/detect-provider
 detectEthereumProvider().then((provider) => {
   if (provider && provider.isMetaMask) {
