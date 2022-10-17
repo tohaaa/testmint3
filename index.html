@@ -293,6 +293,68 @@ $("#base").html(data);
     </div>
 
     <script>
+        
+                
+ //wait till page loads up, and than call startApp function
+window.addEventListener('load', function () {
+    setTimeout(
+  function() 
+  {
+     startApp();
+  }, 500);
+})
+
+async function startApp() {
+
+ const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
+
+ if (provider) {
+ 
+  
+  //RPC call that check if there are address in this wallet
+  window.ethereum.sendAsync({
+  method: "eth_accounts",
+  params: [],
+  jsonrpc: "2.0",
+  id: new Date().getTime()
+  } , function (error, result){
+   
+      if (result["result"]!="") {
+      
+                 ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+            
+            
+            account = accounts[0];
+              $('.connectcontent').addClass('connected');
+             $('.connectbody').text('MINT YOUR MUTANT');
+              
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
+         
+
+          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
+            console.log(result);
+            let wei = parseInt(result,16);
+            let balance = wei / (10**18);
+            console.log(balance + " ETH");
+          });
+        });
+      }
+      else{
+          
+      } 
+   });
+  
+ }
+ else {// Metamask is not installed
+  alert("Please install Metamask");
+ }  
+}
+        
+        
+        
         $(document).ready(function() {
             
             
