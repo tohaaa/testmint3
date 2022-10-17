@@ -4,7 +4,8 @@
 <head>
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/4.8.4/typescript.min.js" integrity="sha512-Q5onIuHtaLaide3MUjt/qRJnFHBd7dY1E9aZdXvu0A8kV+4cZ/d+MwKUBpmI+hnpdQ1HlP3qANwncRu0AwjqsA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
  
  
@@ -300,33 +301,58 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-                        
-        let account;
         
-        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
-            
-            
-            account = accounts[0];
+        
+ //wait till page loads up, and than call startApp function
+window.addEventListener('load', function () {
+    setTimeout(
+  function() 
+  {
+     startApp();
+  }, 500);
+})
+
+async function startApp() {
+
+ const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
+
+ if (provider) {
+ 
+  
+  //RPC call that check if there are address in this wallet
+  window.ethereum.sendAsync({
+  method: "eth_accounts",
+  params: [],
+  jsonrpc: "2.0",
+  id: new Date().getTime()
+  } , function (error, result){
+   
+      if (result["result"]!="") {
+      
+           // account = accounts[0];
               $('.connectcontent').addClass('connected');
              $('.connectbody').text('MINT YOUR MUTANT');
               
             
             $("#connectheader").addClass("hidden");  
             $(".wallet").removeClass("hidden");  
-            $(".wallet p").html(account); 
-         
-
-          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
-            console.log(result);
-            let wei = parseInt(result,16);
-            let balance = wei / (10**18);
-            console.log(balance + " ETH");
-          });
-        });
-      
+            //$(".wallet p").html(account); 
+      }
+      else{
+          alert("wallet not connected");//found not address, which mean this wallet is not logged in
+      } 
+   });
+  
+ }
+ else {// Metamask is not installed
+  alert("Please install Metamask");
+ }  
+}
             
             
+            
+        
+        $(document).ready(function() {
             
             if ($(window).width() < 480) {
                 $('#nationlist').slick({
