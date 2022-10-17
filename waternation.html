@@ -301,8 +301,32 @@
         $(document).ready(function() {
             
             
-                        
-        let account;
+          
+            
+        if (window.ethereum) {
+            const accounts = await window.ethereum.request({method: 'eth_requestAccounts'});
+
+            const account = accounts[0]
+            const web3 = new Web3(window.ethereum);
+            
+             $('.connectcontent').addClass('connected');
+             $('.connectbody').text('MINT YOUR MUTANT');
+              
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
+            
+        }    
+        else {
+            alert();
+        }
+
+            
+            
+            
+            
+        /*let account;
         
         ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
             
@@ -325,7 +349,7 @@
           });
         });
       
-            
+          */  
             
             
             
