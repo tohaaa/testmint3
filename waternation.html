@@ -105,19 +105,19 @@
     $("#base").html(data);
       
             
-        /*    
+            
             
     document.querySelectorAll('.connect').forEach(item => {
   item.addEventListener('click', event => {
- 
-        
+      
+      
         let account;
         
         ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
             
             
             account = accounts[0];
-            $('.connectcontent').addClass('connected');
+              $('.connectcontent').addClass('connected');
              $('.connectbody').text('MINT YOUR MUTANT');
               
             
@@ -133,14 +133,12 @@
             console.log(balance + " ETH");
           });
         });
-  
- 
       
       
       
       
       });  
-    });     */
+    });     
   
     /*$('.connect').click(function () {
      var $this = $(this);
@@ -173,9 +171,6 @@
   
             
         });
-        
-    
-        
     </script>
     
     
@@ -216,7 +211,6 @@
                     <p >0x5c596126612ceFdAeC2B9cb7CeAcfBB509268249 S2</p>
                 </div>
                 <button id="connectheader" class="connect" type="button">CONNECT</button>
-             <div id="connection-status" > </div>
                 <span class="separador">|</span>
                 <div class="social">
                     <a href="https://discord.com/invite/Ru2EZj8P5x" target="_blank">
@@ -258,11 +252,11 @@
     </div>
 
 
-   
+
 <div id="base"  > </div>
 
 
- 
+
 
 
 
@@ -305,119 +299,6 @@
 
     <script>
         $(document).ready(function() {
-            import detectEthereumProvider from '@metamask/detect-provider';
- // detect provider using @metamask/detect-provider
-detectEthereumProvider().then((provider) => {
-  if (provider && provider.isMetaMask) {
-    provider.on('accountsChanged', handleAccountsChanged);
-    // connect btn is initially disabled
-    $('#connectheader').addEventListener('click', connect);
-    checkConnection();
-  } else {
-    console.log('Please install MetaMask!');
-  }
-});
-
-function connect() {
-  ethereum
-    .request({ method: 'eth_requestAccounts' })
-    .then(handleAccountsChanged)
-    .catch((err) => {
-      if (err.code === 4001) {
-        console.log('Please connect to MetaMask.');
-      } else {
-        console.error(err);
-      }
-    });
-}
-
-function checkConnection() {
-  ethereum.request({ method: 'eth_accounts' }).then(handleAccountsChanged).catch(console.error);
-}
-
-function handleAccountsChanged(accounts) {
-  console.log(accounts);
-
-  if (accounts.length === 0) {
-    $('#connection-status').innerText = "You're not connected to MetaMask";
-    $('#connectheader').disabled = false;
-  } else if (accounts[0] !== currentAccount) {
-    currentAccount = accounts[0];
-    $('#connection-status').innerText = `Address: ${currentAccount}`;
-    $('#connectheader').disabled = true;
-  }
-}
- 
-
- 
-  if (typeof window.ethereum !== "undefined") {
- setTimeout(function() 
-  {
-     ethereum
-      .request({ method: "eth_requestAccounts" })
-      .then((accounts) => {
-        const account = accounts[0];
-
-         $('.connectcontent').addClass('connected');
-             $('.connectbody').text('MINT YOUR MUTANT');
-              
-            
-            $("#connectheader").addClass("hidden");  
-            $(".wallet").removeClass("hidden");  
-            $(".wallet p").html(account); 
-
-       
-      })
-      .catch((error) => {
-        console.log(error, error.code);
-
-         
-      });
-  }, 2000);
-
-  
-  } else {
-  
-      
-      
-  }
- 
-
- 
-            
-    
-        
-           
-         
-   
-        /*
-        let account;
-        
-        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
-            
-            
-            account = accounts[0];
-              $('.connectcontent').addClass('connected');
-             $('.connectbody').text('MINT YOUR MUTANT');
-              
-            
-            $("#connectheader").addClass("hidden");  
-            $(".wallet").removeClass("hidden");  
-            $(".wallet p").html(account); 
-         
-
-          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
-            console.log(result);
-            let wei = parseInt(result,16);
-            let balance = wei / (10**18);
-            console.log(balance + " ETH");
-          });
-        });
-      
-         */
-            
-            
-            
             if ($(window).width() < 480) {
                 $('#nationlist').slick({
                     infinite: false,
