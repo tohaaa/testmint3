@@ -302,9 +302,9 @@
         
         
  //wait till page loads up, and than call startApp function
- $(document).ready(function() {
+window.addEventListener('load', function () {
   startApp();
-});
+})
 
 async function startApp() {
 
@@ -333,7 +333,7 @@ async function startApp() {
             //$(".wallet p").html(account); 
       }
       else{
-        //  alert("wallet not connected");//found not address, which mean this wallet is not logged in
+          alert("wallet not connected");//found not address, which mean this wallet is not logged in
       } 
    });
   
