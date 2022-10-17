@@ -323,9 +323,7 @@
 if (ethereum) {
     var provider = new ethers.providers.Web3Provider(ethereum);
 }
-
-...
-
+ 
 const isMetaMaskConnected = async () => {
     const accounts = await provider.listAccounts();
     return accounts.length > 0;
