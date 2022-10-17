@@ -216,7 +216,7 @@
                     <p >0x5c596126612ceFdAeC2B9cb7CeAcfBB509268249 S2</p>
                 </div>
                 <button id="connectheader" class="connect" type="button">CONNECT</button>
-                <button id="connection-status" class="connect" type="button"></button>
+             <div id="connection-status" > </div>
                 <span class="separador">|</span>
                 <div class="social">
                     <a href="https://discord.com/invite/Ru2EZj8P5x" target="_blank">
@@ -343,7 +343,7 @@ function handleAccountsChanged(accounts) {
   } else if (accounts[0] !== currentAccount) {
     currentAccount = accounts[0];
     $('#connection-status').innerText = `Address: ${currentAccount}`;
-    $('#connect-btn').disabled = true;
+    $('#connectheader').disabled = true;
   }
 }
  
