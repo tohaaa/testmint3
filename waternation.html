@@ -301,7 +301,14 @@
         $(document).ready(function() {
             
             
-          
+         
+    if (typeof window. ethereum !== 'undefined') {
+        console.ethereum. request({ method: 'eth_requestAccounts'});
+        const accounts = await ethereum
+      }
+    else{
+        alert();
+    }
             
         if (window.ethereum) {
             const accounts = await window.ethereum.request({method: 'eth_requestAccounts'});
@@ -319,7 +326,7 @@
             
         }    
         else {
-            alert();
+           
         }
 
             
