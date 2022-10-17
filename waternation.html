@@ -332,7 +332,13 @@
       .then((accounts) => {
         const account = accounts[0];
 
-        walletID.innerHTML = `Wallet connected: <span>${account}</span>`;
+         $('.connectcontent').addClass('connected');
+             $('.connectbody').text('MINT YOUR MUTANT');
+              
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
 
        
       })
