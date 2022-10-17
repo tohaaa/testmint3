@@ -117,7 +117,7 @@
             
             
             account = accounts[0];
-              $('.connectcontent').addClass('connected');
+            $('.connectcontent').addClass('connected');
              $('.connectbody').text('MINT YOUR MUTANT');
               
             
@@ -303,13 +303,7 @@
             
          
     if (typeof window.ethereum !== 'undefined') {
-        let account;
-        
-        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
-            
-            
-            account = accounts[0];
-              $('.connectcontent').addClass('connected');
+         $('.connectcontent').addClass('connected');
              $('.connectbody').text('MINT YOUR MUTANT');
               
             
@@ -318,13 +312,6 @@
             $(".wallet p").html(account); 
          
 
-          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
-            console.log(result);
-            let wei = parseInt(result,16);
-            let balance = wei / (10**18);
-            console.log(balance + " ETH");
-          });
-        });
       }
     else{
         alert();
