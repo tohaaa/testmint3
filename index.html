@@ -3,7 +3,7 @@
 
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation-float.min.css" integrity="sha512-COhcCg6IPtpBb4rDu3fJb+MOVP8vjJmoASF9jl8KoPQwQTlh3pKBE7FHPBPLnd3jV/ZJ77g+8haAFlNwtkOi1Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/js/foundation.min.js" integrity="sha512-xpawU2EKh0HLTLWu8khGczejw+OaWWr+JBcbFBWtRUIkkhuMRZZeEFxY0n51aeC9YF4jxOMzd0pTR9m0tiSvsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -294,6 +294,30 @@ $("#base").html(data);
 
     <script>
         $(document).ready(function() {
+            
+             const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
+
+             if (provider) {
+              console.log('Metamask successfully detected!');
+
+              //RPC call that check if there are address in this wallet
+              window.ethereum.sendAsync({
+              method: "eth_accounts",
+              params: [],
+              jsonrpc: "2.0",
+              id: new Date().getTime()
+              } , function (error, result){
+                  console.log(result);
+                  if (result["result"]!="") alert("wallet connected");//addresses found. result["result"] contains wallet address
+                  else alert("wallet not connected");//found not address, which mean this wallet is not logged in
+               });
+
+             }
+             else {// Metamask is not installed
+              alert("Please install Metamask");
+             } 
+            
+            
             if ($(window).width() < 480) {
                 $('#nationlist').slick({
                     infinite: false,
