@@ -311,7 +311,7 @@ async function startApp() {
  const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
 
  if (provider) {
-  console.log('Metamask successfully detected!');
+ 
   
   //RPC call that check if there are address in this wallet
   window.ethereum.sendAsync({
@@ -321,8 +321,23 @@ async function startApp() {
   id: new Date().getTime()
   } , function (error, result){
       console.log(result);
-      if (result["result"]!="") alert("wallet connected");//addresses found. result["result"] contains wallet address
-      else alert("wallet not connected");//found not address, which mean this wallet is not logged in
+      if (result["result"]!="") 
+      {
+      
+            account = accounts[0];
+              $('.connectcontent').addClass('connected');
+             $('.connectbody').text('MINT YOUR MUTANT');
+              
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
+      }
+         
+      
+      else{
+          alert("wallet not connected");//found not address, which mean this wallet is not logged in
+      } 
    });
   
  }
