@@ -295,27 +295,6 @@ $("#base").html(data);
     <script>
         $(document).ready(function() {
             
-             const provider = await detectEthereumProvider()//uses function from "detect-provider.min.js" 
-
-             if (provider) {
-              console.log('Metamask successfully detected!');
-
-              //RPC call that check if there are address in this wallet
-              window.ethereum.sendAsync({
-              method: "eth_accounts",
-              params: [],
-              jsonrpc: "2.0",
-              id: new Date().getTime()
-              } , function (error, result){
-                  console.log(result);
-                  if (result["result"]!="") alert("wallet connected");//addresses found. result["result"] contains wallet address
-                  else alert("wallet not connected");//found not address, which mean this wallet is not logged in
-               });
-
-             }
-             else {// Metamask is not installed
-              alert("Please install Metamask");
-             } 
             
             
             if ($(window).width() < 480) {
