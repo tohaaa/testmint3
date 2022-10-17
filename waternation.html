@@ -300,7 +300,31 @@
     <script>
         $(document).ready(function() {
             
+      const connectButton = document.getElementById("connectButton");
+const walletID = document.getElementById("walletID");
+
+if (typeof window.ethereum !== "undefined") {
+    ethereum
+      .request({ method: "eth_requestAccounts" })
+      .then((accounts) => {
+        const account = accounts[0]
+
+       alert("Wallet connected:" ${account}""");
+      })
+} else {
+      window.open("https://metamask.io/download/", "_blank");
+}
+   
             
+        
+            
+            
+            
+            
+        /*
+        
+        
+           
          
     if (typeof window.ethereum !== 'undefined') {
          $('.connectcontent').addClass('connected');
@@ -316,13 +340,8 @@
     else{
         alert();
     }
-            
         
-            
-            
-            
-            
-        /*let account;
+        let account;
         
         ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
             
