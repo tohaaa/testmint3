@@ -300,7 +300,7 @@
     <script>
         $(document).ready(function() {
         
-if (typeof window.ethereum !== "undefined") {
+/*if (typeof window.ethereum !== "undefined") {
     ethereum.request({ method: "eth_requestAccounts" })
       .then((accounts) => {
         const account = accounts[0];
@@ -317,14 +317,27 @@ if (typeof window.ethereum !== "undefined") {
 } else {
       window.open("https://metamask.io/download/", "_blank");
 }
-   
+ */  
 
-            
-    web3.eth.getAccounts(function(err, accounts){
-    if (err != null) console.error("An error occurred: "+err);
-    else if (accounts.length == 0) console.log("User is not logged in to MetaMask");
-    else console.log("User is logged in to MetaMask");
-});    
+  const { ethereum } = window;
+if (ethereum) {
+    var provider = new ethers.providers.Web3Provider(ethereum);
+}
+
+...
+
+const isMetaMaskConnected = async () => {
+    const accounts = await provider.listAccounts();
+    return accounts.length > 0;
+}
+
+await isMetaMaskConnected().then((connected) => {
+    if (connected) {
+        alert("loh");
+    } else {
+         window.open("https://metamask.io/download/", "_blank");
+    }
+}); 
             
             
             
