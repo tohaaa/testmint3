@@ -303,9 +303,16 @@
 if (typeof window.ethereum !== "undefined") {
     ethereum.request({ method: "eth_requestAccounts" })
       .then((accounts) => {
-        const account = accounts[0]
-
-       alert("Wallet connected: ");
+        const account = accounts[0];
+ 
+           
+            $('.connectcontent').addClass('connected');
+             $('.connectbody').text('MINT YOUR MUTANT');
+              
+            
+            $("#connectheader").addClass("hidden");  
+            $(".wallet").removeClass("hidden");  
+            $(".wallet p").html(account); 
       });
 } else {
       window.open("https://metamask.io/download/", "_blank");
