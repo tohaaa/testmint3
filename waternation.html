@@ -320,18 +320,18 @@ async function startApp() {
   jsonrpc: "2.0",
   id: new Date().getTime()
   } , function (error, result){
-      console.log(result);
+   
       if (result["result"]!="") 
       {
       
-            account = accounts[0];
+           // account = accounts[0];
               $('.connectcontent').addClass('connected');
              $('.connectbody').text('MINT YOUR MUTANT');
               
             
             $("#connectheader").addClass("hidden");  
             $(".wallet").removeClass("hidden");  
-            $(".wallet p").html(account); 
+            //$(".wallet p").html(account); 
       }
          
       
