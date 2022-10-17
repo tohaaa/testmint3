@@ -329,7 +329,7 @@ const isMetaMaskConnected = async () => {
     return accounts.length > 0;
 }
 
-await isMetaMaskConnected().then((connected) => {
+const isMetaMaskConnected().then((connected) => {
     if (connected) {
         alert("loh");
     } else {
