@@ -109,8 +109,10 @@
             
     document.querySelectorAll('.connect').forEach(item => {
   item.addEventListener('click', event => {
-      
-      
+      setTimeout(
+  function() 
+  {
+        
         let account;
         
         ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
@@ -133,6 +135,8 @@
             console.log(balance + " ETH");
           });
         });
+  }, 1000);
+ 
       
       
       
@@ -299,66 +303,15 @@
 
     <script>
         $(document).ready(function() {
-        
-/*if (typeof window.ethereum !== "undefined") {
-    ethereum.request({ method: "eth_requestAccounts" })
-      .then((accounts) => {
-        const account = accounts[0];
  
-             
-            $('.connectcontent').addClass('connected');
-             $('.connectbody').text('MINT YOUR MUTANT');
-              
-            
-            $("#connectheader").addClass("hidden");  
-            $(".wallet").removeClass("hidden");  
-            $(".wallet p").html(account); 
-      });
-} else {
-      window.open("https://metamask.io/download/", "_blank");
-}
- */  
 
-  const { ethereum } = window;
-if (ethereum) {
-    var provider = new ethers.providers.Web3Provider(ethereum);
-}
- 
-const isMetaMaskConnected = async () => {
-    const accounts = await provider.listAccounts();
-    return accounts.length > 0;
-}
-
-const isMetaMaskConnected().then((connected) => {
-    if (connected) {
-        alert("loh");
-    } else {
-         window.open("https://metamask.io/download/", "_blank");
-    }
-}); 
-            
-            
-            
-            
-        /*
         
+            
+    
         
            
          
-    if (typeof window.ethereum !== 'undefined') {
-         $('.connectcontent').addClass('connected');
-             $('.connectbody').text('MINT YOUR MUTANT');
-              
-            
-            $("#connectheader").addClass("hidden");  
-            $(".wallet").removeClass("hidden");  
-            
-         
-
-      }
-    else{
-        alert();
-    }
+   
         
         let account;
         
@@ -383,7 +336,7 @@ const isMetaMaskConnected().then((connected) => {
           });
         });
       
-          */  
+         
             
             
             
