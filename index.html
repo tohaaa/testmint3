@@ -135,6 +135,17 @@
  data += '  </div>';
 
 $("#base").html(data);
+            
+                    if ($(window).width() < 480) {
+                $('#nationlist').slick({
+                    infinite: false,
+                    slidesToShow: 1.05,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false
+
+                });
+            }
 
         document.querySelectorAll('.connect').forEach(item => {
   item.addEventListener('click', event => {
@@ -359,16 +370,7 @@ async function startApp() {
             
             
             
-            if ($(window).width() < 480) {
-                $('#nationlist').slick({
-                    infinite: false,
-                    slidesToShow: 1.05,
-                    slidesToScroll: 1,
-                    dots: true,
-                    arrows: false
-
-                });
-            }
+    
 
         });
     </script>
